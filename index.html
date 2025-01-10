@@ -45,12 +45,27 @@
       <button class="no-drag uppercase p-2 rounded-md leading-none bg-[#E52424] text-white text-[20px]" onclick="window.close()">sair</button>
     </div>
     <div id="functionalityScreen" class="screenView w-full flex flex-col justify-center gap-8">
-      <h1 class="uppercase">funcionalidades</h1>
+      <h1 class="uppercase">Funcionalidades</h1>
       <div class="grid grid-cols-4 w-full gap-4">
-        <button class="buttonFunctionality" onclick="navigateTo('correctionScreen')">Corretor</button>
-        <button class="buttonFunctionality" onclick="navigateTo('translateScreen')">Tradutor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('correction')">Corretor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('translate')">Tradutor</button>
       </div>
     </div>
+    
+    <!-- Container para Telas Dinâmicas -->
+    <div id="dynamicScreenContainer"></div>
+     <!-- Template para Telas -->
+  <template id="screenTemplate">
+    <div class="screenView w-full flex flex-col justify-center gap-8 hidden">
+      <div class="w-full flex justify-between">
+        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
+        <h1 class="uppercase"></h1>
+        <div></div>
+      </div>
+      <!-- Conteúdo Específico da Tela -->
+      <div class="content"></div>
+    </div>
+  </template>
     <div id="correctionScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
       <div class="w-full flex justify-between">
         <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
@@ -60,7 +75,7 @@
     </div>
     <div id="translateScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
       <div class="w-full flex justify-between">
-        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
+        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')"><i class="fas fa-arrow-left"></i></button>
         <h1 class="uppercase">Tradutor</h1>
         <div></div>
       </div>
