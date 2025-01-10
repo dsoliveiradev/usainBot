@@ -1,0 +1,22 @@
+{
+  "name": "usainbot",
+  "version": "1.0.0",
+  "description": "Bot simples usando Electron",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./style.css -o ./dist/tailwind.css --watch",
+    "start": "electron .",
+    "dev": "npx tailwindcss -i ./style.css -o ./dist/tailwind.css && npm start"
+  },
+  "keywords": [],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

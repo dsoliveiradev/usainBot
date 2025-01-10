@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usain Bot</title>
+  <link rel="stylesheet" href="./dist/tailwind.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jaro&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Jaro', sans-serif;
+    }
+    .drag-region {
+      -webkit-app-region: drag;
+    }
+    .no-drag {
+      -webkit-app-region: no-drag;
+    }
+    .text-transparent-stroke {
+      color: transparent;
+      -webkit-text-stroke: 2px white !important;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      font-size: 25px;
+    }
+    .buttonFunctionality {
+      -webkit-app-region: no-drag;
+      width: 100%;
+      padding: 5px 0px;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      text-transform: uppercase;
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body class="bg-transparent">
+  <div class="bg-[#282C34] w-full rounded-2xl p-6 drag-region flex flex-col gap-8">
+    <div class="flex w-full justify-between items-start">
+      <div class="no-drag uppercase text-[40px] font-bold text-white leading-none">Usain<span class="text-transparent-stroke">bot</span></div>
+      <button class="no-drag uppercase p-2 rounded-md leading-none bg-[#E52424] text-white text-[20px]" onclick="window.close()">sair</button>
+    </div>
+    <div id="functionalityScreen" class="screenView w-full flex flex-col justify-center gap-8">
+      <h1 class="uppercase">funcionalidades</h1>
+      <div class="grid grid-cols-4 w-full gap-4">
+        <button class="buttonFunctionality" onclick="navigateTo('correctionScreen')">Corretor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('translateScreen')">Tradutor</button>
+      </div>
+    </div>
+    <div id="correctionScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
+      <div class="w-full flex justify-between">
+        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
+        <h1 class="uppercase">Corretor</h1>
+        <div></div>
+      </div>
+    </div>
+    <div id="translateScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
+      <div class="w-full flex justify-between">
+        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
+        <h1 class="uppercase">Tradutor</h1>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
