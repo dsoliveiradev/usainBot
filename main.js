@@ -3,7 +3,6 @@ const { app, BrowserWindow, globalShortcut } = require("electron");
 let botWindow;
 
 app.whenReady().then(() => {
-  // Função para criar a janela
   const createBotWindow = () => {
     botWindow = new BrowserWindow({
       width: 650,
@@ -32,10 +31,14 @@ app.whenReady().then(() => {
 
   globalShortcut.register("Alt+B", () => {
     if (botWindow && !botWindow.isDestroyed()) {
-      if (botWindow.isMinimized()) {
-        botWindow.restore();
+      if (botWindow.isVisible()) {
+        botWindow.hide();
+      } else {
+        if (botWindow.isMinimized()) {
+          botWindow.restore();
+        }
+        botWindow.show();
       }
-      botWindow.show();
     } else {
       createBotWindow();
     }
