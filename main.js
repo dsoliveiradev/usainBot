@@ -29,6 +29,8 @@ app.whenReady().then(() => {
     });
   };
 
+  createBotWindow();
+  
   globalShortcut.register("Alt+B", () => {
     if (botWindow && !botWindow.isDestroyed()) {
       if (botWindow.isVisible()) {

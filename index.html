@@ -6,6 +6,7 @@
   <title>Usain Bot</title>
   <link rel="stylesheet" href="./dist/tailwind.css">
   <link href="https://fonts.googleapis.com/css2?family=Jaro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     body {
       font-family: 'Jaro', sans-serif;
@@ -45,28 +46,26 @@
       <button class="no-drag uppercase p-2 rounded-md leading-none bg-[#E52424] text-white text-[20px]" onclick="window.close()">sair</button>
     </div>
     <div id="functionalityScreen" class="screenView w-full flex flex-col justify-center gap-8">
-      <h1 class="uppercase">Funcionalidades</h1>
+      <h1 class="uppercase">funcionalidades</h1>
       <div class="grid grid-cols-4 w-full gap-4">
-        <button class="buttonFunctionality" onclick="navigateTo('correction')">Corretor</button>
-        <button class="buttonFunctionality" onclick="navigateTo('translate')">Tradutor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('correction', 'optionScreen')">Corretor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('translate', 'optionScreen')">Tradutor</button>
+        <button class="buttonFunctionality" onclick="navigateTo('devOps', 'optionScreen')">devOps</button>
       </div>
     </div>
-    
-    <!-- Container para Telas Dinâmicas -->
-    <div id="dynamicScreenContainer"></div>
-     <!-- Template para Telas -->
-  <template id="screenTemplate">
-    <div class="screenView w-full flex flex-col justify-center gap-8 hidden">
-      <div class="w-full flex justify-between">
-        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
-        <h1 class="uppercase"></h1>
-        <div></div>
+    <div id="optionScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
+      <div class="w-full flex justify-between items-center">
+        <button class="no-drag" onclick="navigateTo('functionality', 'functionalityScreen')">
+          <i class="material-icons text-white">arrow_back</i>
+        </button>
+        <h1 id="titleOption" class="uppercase"></h1>
+        <button class="no-drag">
+          <i class="material-icons text-white">settings</i>
+        </button>
       </div>
-      <!-- Conteúdo Específico da Tela -->
-      <div class="content"></div>
     </div>
-  </template>
-    <div id="correctionScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
+
+    <!-- <div id="correctionScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
       <div class="w-full flex justify-between">
         <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')">Voltar</button>
         <h1 class="uppercase">Corretor</h1>
@@ -74,14 +73,24 @@
       </div>
     </div>
     <div id="translateScreen" class="screenView w-full flex flex-col justify-center gap-8 hidden">
-      <div class="w-full flex justify-between">
-        <button class="uppercase no-drag" onclick="navigateTo('functionalityScreen')"><i class="fas fa-arrow-left"></i></button>
+      <div class="w-full flex justify-between items-center">
+        <button class="no-drag" onclick="navigateTo('functionalityScreen')">
+          <i class="material-icons text-white">arrow_back</i>
+        </button>
+          <div class="flex gap-4">          
+        </div>
         <h1 class="uppercase">Tradutor</h1>
         <div></div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <script src="index.js"></script>
 </body>
 </html>
+
+<!-- Input para a tecla principal -->
+<!-- <div class="flex flex-col">
+<label for="mainKey" class="text-white">Tecla Principal</label>
+<input type="text" id="mainKey" maxlength="1" class="buttonFunctionality text-black" placeholder="Ex: C" />
+</div> -->
